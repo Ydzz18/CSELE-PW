@@ -1,0 +1,112 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #f1f1f1;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+form {
+    background: rgba(34, 34, 40, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #a3a3ff;
+    letter-spacing: 2px;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: #cfcfff;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: #2d2d3a;
+    color: #f1f1f1;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background: #39395a;
+}
+
+button[type="submit"] {
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.8s ease-out;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
