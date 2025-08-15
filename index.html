@@ -15,11 +15,17 @@
             const password = document.getElementById('password').value;
 
             if (username === validUsername && password === validPassword) {
-                alert("Login successful!");
-                window.location.href = "main.html";
+                showAccessGranted();
             } else {
                 alert("Invalid username or password. Please try again.");
             }
+        }
+        function showAccessGranted() {
+            const msg = document.getElementById("accessGranted");
+            msg.style.display = "block";
+            setTimeout(() => {
+                window.location.href = "main.html"; // Redirect after 2s
+            }, 2000);
         }
     </script>
 </head>
@@ -31,6 +37,12 @@
         <input type="password" id="password" name="password" required><br><br>
         <button type="submit">Login</button>
     </form>
+    
+    <div id="accessGranted" class="access-granted">
+    ACCESS GRANTED
+    </div>
+
 </body>
 
 </html>
+
