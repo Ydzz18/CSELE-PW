@@ -91,16 +91,18 @@ button[type="submit"] {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
 @keyframes glow {
     from {
-        text-shadow: 0 0 5px #00ff00;
-        box-shadow: 0 0 5px #00ff00;
+        text-shadow: 0 0 2px #00ff00; /* Reduced from 5px */
+        box-shadow: 0 0 2px #00ff00;   /* Reduced from 5px */
     }
     to {
-        text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff88;
-        box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 136, 0.5);
+        text-shadow: 0 0 8px #00ff00, 0 0 12px #00ff88; /* Reduced from 15px/25px */
+        box-shadow: 0 0 8px #00ff00, 0 0 12px rgba(0, 255, 136, 0.5); /* Reduced */
     }
 }
+
 
 .fade-in { animation: fadeIn 0.8s ease-out; }
 .slide-in { animation: slideIn 0.8s ease-out; }
