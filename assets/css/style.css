@@ -129,11 +129,11 @@ button[type="submit"]:active {
     font-size: 2rem;
     font-weight: bold;
     color: green;
-    animation: glow-acg 1s infinite alternate;
+    animation: glow 1s infinite alternate;
     box-shadow: 0 6px 32px rgba(0,0,0,0.45);
 }
 
-@keyframes glow-acg {
+@keyframes glow {
     from {
         box-shadow: 0 0 5px #00ff00;
     }
