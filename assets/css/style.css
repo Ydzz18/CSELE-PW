@@ -114,13 +114,12 @@ button[type="submit"]:active {
     animation: spin 1s linear infinite;
 
 }
-
 .access-granted {
     display: none;
-    position: fixed; /* Stay in place */
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center X & Y */
+    transform: translate(-50%, -50%);
     background: rgba(34, 34, 40, 0.95);
     border: 3px solid green;
     padding: 20px 40px;
@@ -129,19 +128,17 @@ button[type="submit"]:active {
     font-size: 2rem;
     font-weight: bold;
     color: green;
-    animation: glow 1s infinite alternate;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.45);
+    animation: glow 1s infinite alternate; /* Apply the glow animation */
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.45);
 }
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 5px #00ff00;
+        text-shadow: 0 0 5px #00ff00; /* Glow effect for text */
+        box-shadow: 0 0 5px #00ff00; /* Optional: Glow for the box */
     }
     to {
-        box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff88; /* Stronger glow */
+        box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 136, 0.5);
     }
 }
-
-
-
-
