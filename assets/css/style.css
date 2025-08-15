@@ -17,14 +17,15 @@ form {
     display: flex;
     flex-direction: column;
     min-width: 320px;
-    border: 2px solid #a3a3ff; /* Match access granted border */
+    border: 2px solid green; /* Match access granted border */
 }
 
 h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #a3a3ff; /* Match access granted text */
+    color: green; /* Match access granted text */
     letter-spacing: 2px;
+    font-weight: 900;
 }
 
 label {
@@ -39,7 +40,7 @@ input[type="password"] {
     border: none;
     border-radius: 8px;
     background: #2d2d3a; /* Dark gray background */
-    color: #f1f1f1;
+    color: green;
     font-size: 1rem;
     outline: none;
     transition: background 0.2s;
@@ -54,8 +55,8 @@ button[type="submit"] {
     padding: 0.7rem;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(#a3a3ff);
-    color: #fff;
+    background: green;
+    color: black;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
@@ -127,7 +128,7 @@ button[type="submit"]:active {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    color: #a3a3ff;
+    color: green;
     animation: glow-acg 1s infinite alternate;
     box-shadow: 0 6px 32px rgba(0,0,0,0.45);
 }
