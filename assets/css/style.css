@@ -109,4 +109,28 @@ button[type="submit"]:active {
 
 .spin {
     animation: spin 1s linear infinite;
+
+}
+
+.access-granted {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00ff00;
+    border: 3px solid #00ff00;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 50px auto;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ff00;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
 }
