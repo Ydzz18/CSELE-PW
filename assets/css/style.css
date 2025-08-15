@@ -133,7 +133,7 @@ button[type="submit"]:active {
     box-shadow: 0 6px 32px rgba(0,0,0,0.45);
 }
 
-@keyframes glow {
+@keyframes glow-acg {
     from {
         box-shadow: 0 0 5px #00ff00;
     }
