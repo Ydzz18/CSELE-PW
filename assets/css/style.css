@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    background-color: #222228;
     color: #f1f1f1;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
@@ -54,7 +54,7 @@ button[type="submit"] {
     padding: 0.7rem;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    background: linear-gradient(#a3a3ff);
     color: #fff;
     font-size: 1.1rem;
     font-weight: bold;
@@ -140,6 +140,7 @@ button[type="submit"]:active {
         box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
     }
 }
+
 
 
 
