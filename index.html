@@ -37,14 +37,29 @@
         }
         function startSelfDestruct() {
             const sdMsg = document.getElementById("selfDestruct");
+            const countdown = document.getElementById("countdown");
+            let timeLeft = 30;
         
             sdMsg.style.display = "block";
             sdMsg.classList.remove("minimized"); // reset if used before
+            countdown.innerText = timeLeft;
         
-            // Automatically minimize after a few seconds (optional)
-            setTimeout(() => {
-                sdMsg.classList.add("minimized");
-            }, 3000); // 3s before moving to bottom-left
+            // Start countdown
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdown.innerText = timeLeft;
+        
+                // At 5 seconds in, minimize to bottom-left
+                if (timeLeft === 25) {
+                    sdMsg.classList.add("minimized");
+                }
+        
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    sdMsg.style.display = "none"; 
+                    alert("System stabilized."); // 🔹 Removed attempts counter
+                }
+            }, 1000);
         }
         
         function lockOutUser() {
@@ -79,6 +94,7 @@
 </body>
 
 </html>
+
 
 
 
