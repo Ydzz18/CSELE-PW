@@ -8,6 +8,7 @@
     <script>
         const validUsername = "Ydrian";
         const validPassword = "password";
+        let attempts = 3; // total attempts allowed
 
         function handleLogin(event) {
             event.preventDefault();
@@ -19,7 +20,12 @@
                 loginForm.style.visibility = "hidden";
                 showAccessGranted();
             } else {
-                alert("Invalid username or password. Please try again.");
+                attempts--;
+                if (attempts > 0) {
+                    startSelfDestruct();
+                } else {
+                    lockOutUser();
+                }
             }
         }
         function showAccessGranted() {
@@ -29,7 +35,41 @@
                 window.location.href = "main.html"; // Redirect after 2s
             }, 2000);
         }
-    </script>
+        function startSelfDestruct() {
+            const sdMsg = document.getElementById("selfDestruct");
+            const countdown = document.getElementById("countdown");
+            let timeLeft = 30;
+
+            sdMsg.style.display = "block";
+            sdMsg.classList.remove("minimized"); // reset if used before
+            countdown.innerText = timeLeft;
+
+            // Start countdown
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdown.innerText = timeLeft;
+
+                // At 5 seconds in, minimize to bottom-left
+                if (timeLeft === 25) {
+                    sdMsg.classList.add("minimized");
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    sdMsg.style.display = "none"; 
+                    alert(`System stabilized. You have ${attempts} attempt(s) left.`);
+                }
+            }, 1000);
+        }
+        function lockOutUser() {
+            document.body.innerHTML = `
+                <div style="color:red; font-size:2rem; text-align:center; margin-top:20%;">
+                    🚫 ACCESS DENIED 🚫 <br><br>
+                    Too many failed attempts. <br>
+                    System permanently locked.
+                </div>`;
+        }
+</script>
 </head>
 <body>
     <div class="login-container" id="loginForm">
@@ -42,11 +82,13 @@
             <button type="submit">Login</button>
         </form>
     </div>
-
     <div id="accessGranted" class="access-granted">
-    ACCESS GRANTED
+        ACCESS GRANTED
     </div>
-
+    <div id="selfDestruct" class="self-destruct">
+        Initializing self-destruct sequence...<br>
+        <span id="countdown">30</span> seconds remaining
+    </div>
 </body>
 
 </html>
