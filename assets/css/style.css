@@ -188,17 +188,19 @@ button[type="submit"]:active {
     transition: all 1s ease-in-out;
 }
 
-/* Minimized state (bottom-left corner) */
+/* Minimized state (top-right corner for responsiveness) */
 .self-destruct.minimized {
-    top: auto;
-    left: 20px;
-    bottom: 20px;
+    top: 20px;
+    right: 20px;
+    left: auto;      /* override previous centering */
+    bottom: auto;
     transform: none;
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px red;
 }
+
 
 
 @keyframes pulse {
