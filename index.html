@@ -37,30 +37,16 @@
         }
         function startSelfDestruct() {
             const sdMsg = document.getElementById("selfDestruct");
-            const countdown = document.getElementById("countdown");
-            let timeLeft = 30;
-
+        
             sdMsg.style.display = "block";
             sdMsg.classList.remove("minimized"); // reset if used before
-            countdown.innerText = timeLeft;
-
-            // Start countdown
-            const timer = setInterval(() => {
-                timeLeft--;
-                countdown.innerText = timeLeft;
-
-                // At 5 seconds in, minimize to bottom-left
-                if (timeLeft === 25) {
-                    sdMsg.classList.add("minimized");
-                }
-
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    sdMsg.style.display = "none"; 
-                    alert(`System stabilized. You have ${attempts} attempt(s) left.`);
-                }
-            }, 1000);
+        
+            // Automatically minimize after a few seconds (optional)
+            setTimeout(() => {
+                sdMsg.classList.add("minimized");
+            }, 3000); // 3s before moving to bottom-left
         }
+        
         function lockOutUser() {
             document.body.innerHTML = `
                 <div style="color:red; font-size:2rem; text-align:center; margin-top:20%;">
@@ -69,6 +55,7 @@
                     System permanently locked.
                 </div>`;
         }
+
 </script>
 </head>
 <body>
@@ -92,6 +79,7 @@
 </body>
 
 </html>
+
 
 
 
