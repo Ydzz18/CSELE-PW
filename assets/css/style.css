@@ -12,7 +12,7 @@ body {
 
 form {
     background: rgba(34, 34, 40, 0.95); /* Match access granted background */
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 2.5rem;
     border-radius: 16px;
     box-shadow: 0 6px 32px rgba(0,0,0,0.45);
     display: flex;
@@ -51,6 +51,7 @@ input[type="password"] {
     outline: none;
     transition: background 0.2s;
     width: 100%;
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
