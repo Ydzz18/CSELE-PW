@@ -49,7 +49,7 @@
                 timeLeft--;
                 countdown.innerText = timeLeft;
         
-                // At 5 seconds in, minimize to bottom-left
+                // Minimize after 5 seconds
                 if (timeLeft === 25) {
                     sdMsg.classList.add("minimized");
                 }
@@ -57,10 +57,11 @@
                 if (timeLeft <= 0) {
                     clearInterval(timer);
                     sdMsg.style.display = "none"; 
-                    alert("System stabilized."); // 🔹 Removed attempts counter
+                    alert("System stabilized.");
                 }
             }, 1000);
         }
+
         
         function lockOutUser() {
             document.body.innerHTML = `
@@ -94,6 +95,7 @@
 </body>
 
 </html>
+
 
 
 
