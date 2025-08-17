@@ -57,7 +57,7 @@
                 if (timeLeft <= 0) {
                     clearInterval(timer);
                     sdMsg.style.display = "none"; 
-                    alert("System stabilized.");
+                    lockOutUser();
                 }
             }, 1000);
         }
@@ -101,6 +101,7 @@
 </body>
 
 </html>
+
 
 
 
