@@ -65,11 +65,65 @@
         
         function lockOutUser() {
             document.body.innerHTML = `
-                <div style="color:red; font-size:2rem; text-align:center; margin-top:20%;">
-                    🚫 ACCESS DENIED 🚫 <br><br>
-                    Too many failed attempts. <br>
-                    System permanently locked.
-                </div>`;
+                <div style="
+                    background: black;
+                    color: #ff2e2e;
+                    font-family: 'Courier New', monospace;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin: 0;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    animation: flicker 1.5s infinite alternate;
+                ">
+                    <div style="text-shadow: 0 0 10px #ff2e2e, 0 0 20px #ff0000;">
+                        █▓▒░ 🚫 ACCESS DENIED 🚫 ░▒▓█
+                    </div>
+                    <br>
+                    <div style="font-size:1.5rem; text-shadow: 0 0 8px #ff0000;">
+                        Too many failed attempts.<br>
+                        System permanently locked.
+                    </div>
+                </div>
+        
+                <style>
+                    body {
+                        margin: 0;
+                        overflow: hidden;
+                    }
+        
+                    /* Flicker effect */
+                    @keyframes flicker {
+                        0% { opacity: 1; }
+                        45% { opacity: 0.9; }
+                        50% { opacity: 0.4; }
+                        55% { opacity: 0.8; }
+                        60% { opacity: 0.3; }
+                        100% { opacity: 1; }
+                    }
+        
+                    /* CRT scanlines */
+                    body::before {
+                        content: "";
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: repeating-linear-gradient(
+                            to bottom,
+                            rgba(255,0,0,0.05) 0px,
+                            rgba(255,0,0,0.05) 2px,
+                            transparent 2px,
+                            transparent 4px
+                        );
+                        pointer-events: none;
+                    }
+                </style>
+            `;
         
             // Redirect to YouTube after 3 seconds
             setTimeout(() => {
@@ -101,6 +155,7 @@
 </body>
 
 </html>
+
 
 
 
