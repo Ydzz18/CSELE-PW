@@ -461,7 +461,46 @@ img, video, iframe {
         padding: 1rem;
     }
 }
+.audio-player {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 320px;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00 inset;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    animation: glow 1.5s infinite alternate;
+}
 
+/* Add glowing title */
+.audio-player::before {
+    content: "🎵 SYSTEM AUDIO MODULE";
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00, 0 0 12px #00ff00;
+}
+
+/* Slightly customize the default audio */
+audio {
+    width: 100%;
+    filter: drop-shadow(0 0 6px #00ff00);
+    border-radius: 8px;
+}
+
+/* Neon glow animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00 inset;
+    }
+    to {
+        box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00 inset;
+    }
+}
 
 /* Center navbar items on desktop */
 nav ul {
