@@ -242,6 +242,9 @@ hr {
 .project-list strong {
     color: #a3a3ff;
 }
+.project-list a {
+    color: #a3a3ff;
+}
 .faq-list {
     list-style: none;
     padding: 0;
