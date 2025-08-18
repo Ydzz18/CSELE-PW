@@ -21,7 +21,7 @@
                 showAccessGranted();
             } else {
                 attempts--;
-                if (attempts > 0) {
+                if (attempts > 2) {
                     startSelfDestruct();
                 } else {
                     lockOutUser();
@@ -155,6 +155,7 @@
 </body>
 
 </html>
+
 
 
 
